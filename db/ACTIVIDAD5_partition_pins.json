@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ldr_external_interface_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "ldr_external_interface_cs_n",
+					"strict" : false
+				},
+				{
+					"name" : "ldr_external_interface_din",
+					"strict" : false
+				},
+				{
+					"name" : "clk_clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset_reset_n",
+					"strict" : false
+				},
+				{
+					"name" : "ldr_external_interface_dout",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

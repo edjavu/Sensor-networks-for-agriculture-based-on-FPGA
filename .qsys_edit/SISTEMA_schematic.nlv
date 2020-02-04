@@ -1,0 +1,21 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst SISTEMA.TIMER -pg 1 -lvl 5 -y 130
+preplace inst SISTEMA.Procesador1.reset_bridge -pg 1
+preplace inst SISTEMA.SRAM1 -pg 1 -lvl 5 -y 700
+preplace inst SISTEMA.LDR -pg 1 -lvl 6 -y 590
+preplace inst SISTEMA -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst SISTEMA.Procesador1 -pg 1 -lvl 4 -y 530
+preplace inst SISTEMA.CLOCK_50 -pg 1 -lvl 2 -y 1030
+preplace inst SISTEMA.JTAG_UART -pg 1 -lvl 5 -y 30
+preplace inst SISTEMA.Procesador1.cpu -pg 1
+preplace inst SISTEMA.Procesador1.clock_bridge -pg 1
+preplace netloc FAN_OUT<net_container>SISTEMA</net_container>(SLAVE)TIMER.irq,(MASTER)Procesador1.irq,(SLAVE)JTAG_UART.irq) 1 4 1 1460
+preplace netloc INTERCONNECT<net_container>SISTEMA</net_container>(SLAVE)Procesador1.reset,(SLAVE)LDR.reset,(SLAVE)TIMER.reset,(MASTER)CLOCK_50.clk_reset,(SLAVE)JTAG_UART.reset,(MASTER)Procesador1.debug_reset_request,(SLAVE)SRAM1.reset1) 1 2 4 NJ 1060 1010 690 1480 610 1840
+preplace netloc FAN_OUT<net_container>SISTEMA</net_container>(MASTER)CLOCK_50.clk,(SLAVE)LDR.clk,(SLAVE)SRAM1.clk1,(SLAVE)Procesador1.clk,(SLAVE)TIMER.clk,(SLAVE)JTAG_UART.clk) 1 2 4 NJ 1040 990 670 1540 570 1880
+preplace netloc EXPORT<net_container>SISTEMA</net_container>(SLAVE)LDR.external_interface,(SLAVE)SISTEMA.ldr_external_interface) 1 0 6 NJ 710 NJ 710 NJ 710 NJ 710 NJ 630 NJ
+preplace netloc EXPORT<net_container>SISTEMA</net_container>(SLAVE)CLOCK_50.clk_in,(SLAVE)SISTEMA.clk) 1 0 2 NJ 1040 NJ
+preplace netloc INTERCONNECT<net_container>SISTEMA</net_container>(MASTER)Procesador1.data_master,(MASTER)Procesador1.instruction_master,(SLAVE)JTAG_UART.avalon_jtag_slave,(SLAVE)Procesador1.debug_mem_slave,(SLAVE)SRAM1.s1,(SLAVE)LDR.adc_slave,(SLAVE)TIMER.s1) 1 3 3 1010 490 1500 590 1860
+preplace netloc EXPORT<net_container>SISTEMA</net_container>(SLAVE)CLOCK_50.clk_in_reset,(SLAVE)SISTEMA.reset) 1 0 2 NJ 1060 NJ
+levelinfo -pg 1 0 150 2190
+levelinfo -hier SISTEMA 160 180 600 970 1220 1680 2030 2180

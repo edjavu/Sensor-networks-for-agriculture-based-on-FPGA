@@ -1,0 +1,11 @@
+	component SISTEMA is
+		port (
+			clk_clk                     : in  std_logic := 'X'; -- clk
+			ldr_external_interface_sclk : out std_logic;        -- sclk
+			ldr_external_interface_cs_n : out std_logic;        -- cs_n
+			ldr_external_interface_dout : in  std_logic := 'X'; -- dout
+			ldr_external_interface_din  : out std_logic;        -- din
+			reset_reset_n               : in  std_logic := 'X'  -- reset_n
+		);
+	end component SISTEMA;
+
